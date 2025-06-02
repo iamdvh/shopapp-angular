@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -29,7 +30,7 @@ public class UserDTO {
     @JsonProperty("retype_password")
     String retypePassword;
     @JsonProperty("day_of_birth")
-    Date dateOfBirth;
+    LocalDateTime dateOfBirth;
     @JsonProperty("facebook_account_id")
     int facebookAccountId;
     @JsonProperty("google_account_id")
