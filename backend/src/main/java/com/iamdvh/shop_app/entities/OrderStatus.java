@@ -1,4 +1,4 @@
-package com.iamdvh.shop_app.models;
+package com.iamdvh.shop_app.entities;
 
 public class OrderStatus {
     public static final String PENDING = "pending";

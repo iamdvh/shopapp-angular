@@ -1,4 +1,4 @@
-package com.iamdvh.shop_app.models;
+package com.iamdvh.shop_app.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

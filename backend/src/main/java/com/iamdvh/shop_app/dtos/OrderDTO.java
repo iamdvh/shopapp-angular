@@ -18,7 +18,7 @@ import java.util.Date;
 public class OrderDTO {
     @JsonProperty("user_id")
     @Min(value = 1, message = "User's ID must be > 0.")
-    String userId;
+    Long userId;
     @JsonProperty("fullname")
     String fullName;
     String email;
@@ -31,6 +31,8 @@ public class OrderDTO {
     @JsonProperty("total_money")
     @Min(value = 0, message = "Total money must be >= 0.")
     Float totalMoney;
+    @JsonProperty("shipping_date")
+    Date shippingDate;
     @JsonProperty("shipping_method")
     String shippingMethod;
     @JsonProperty("shipping_address")

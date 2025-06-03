@@ -2,17 +2,13 @@ package com.iamdvh.shop_app.services;
 
 import com.iamdvh.shop_app.dtos.ProductDTO;
 import com.iamdvh.shop_app.dtos.ProductImageDTO;
-import com.iamdvh.shop_app.dtos.UserDTO;
 import com.iamdvh.shop_app.exceptions.DataNotFoundException;
 import com.iamdvh.shop_app.exceptions.InvalidParam;
-import com.iamdvh.shop_app.models.Product;
-import com.iamdvh.shop_app.models.ProductImage;
-import com.iamdvh.shop_app.models.User;
-import com.iamdvh.shop_app.responses.ProductResponse;
+import com.iamdvh.shop_app.entities.Product;
+import com.iamdvh.shop_app.entities.ProductImage;
+import com.iamdvh.shop_app.dtos.responses.ProductResponse;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-
-import java.util.List;
 
 public interface IProductService {
     Product createProduct(ProductDTO productDTO) throws DataNotFoundException;

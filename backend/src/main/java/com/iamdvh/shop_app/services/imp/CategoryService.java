@@ -1,6 +1,6 @@
 package com.iamdvh.shop_app.services.imp;
 
-import com.iamdvh.shop_app.models.Category;
+import com.iamdvh.shop_app.entities.Category;
 import com.iamdvh.shop_app.repositories.CategoryRepository;
 import com.iamdvh.shop_app.services.ICategoryService;
 import lombok.AccessLevel;

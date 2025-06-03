@@ -1,4 +1,4 @@
-package com.iamdvh.shop_app.models;
+package com.iamdvh.shop_app.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -25,8 +25,11 @@ public class Order extends BasePrimaryKey {
     String note;
     @Column(name = "order_date")
     Date orderDate;
+    @Column(name = "status")
+    String status;
     @Column(name = "total_money")
     String totalMoney;
+    @Column(name = "active")
     boolean active;
     @Column(name = "shipping_method", length = 100)
     String shippingMethod;

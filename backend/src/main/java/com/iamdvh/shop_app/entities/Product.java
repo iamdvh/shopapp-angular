@@ -1,11 +1,8 @@
-package com.iamdvh.shop_app.models;
+package com.iamdvh.shop_app.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
-import java.time.LocalDateTime;
-import java.util.Date;
 
 @Entity
 @Table(name = "products")

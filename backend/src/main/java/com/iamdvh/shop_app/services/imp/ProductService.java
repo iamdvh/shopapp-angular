@@ -5,13 +5,13 @@ import com.iamdvh.shop_app.dtos.ProductDTO;
 import com.iamdvh.shop_app.dtos.ProductImageDTO;
 import com.iamdvh.shop_app.exceptions.DataNotFoundException;
 import com.iamdvh.shop_app.exceptions.InvalidParam;
-import com.iamdvh.shop_app.models.Category;
-import com.iamdvh.shop_app.models.Product;
-import com.iamdvh.shop_app.models.ProductImage;
+import com.iamdvh.shop_app.entities.Category;
+import com.iamdvh.shop_app.entities.Product;
+import com.iamdvh.shop_app.entities.ProductImage;
 import com.iamdvh.shop_app.repositories.CategoryRepository;
 import com.iamdvh.shop_app.repositories.ProductImageRepository;
 import com.iamdvh.shop_app.repositories.ProductRepository;
-import com.iamdvh.shop_app.responses.ProductResponse;
+import com.iamdvh.shop_app.dtos.responses.ProductResponse;
 import com.iamdvh.shop_app.services.IProductService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -19,8 +19,6 @@ import lombok.experimental.FieldDefaults;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 
 @RequiredArgsConstructor

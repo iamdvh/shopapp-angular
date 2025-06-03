@@ -1,4 +1,4 @@
-package com.iamdvh.shop_app.models;
+package com.iamdvh.shop_app.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "product_images")
+@Table(name = "users")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -23,6 +23,7 @@ public class User extends Base{
     String address;
     @Column(length = 100)
     String password;
+    @Column(name = "is_active")
     boolean active;
     @Column(name = "date_of_birth")
     LocalDateTime dateOfBirth;

@@ -1,4 +1,4 @@
-package com.iamdvh.shop_app.responses;
+package com.iamdvh.shop_app.dtos.responses;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AccessLevel;

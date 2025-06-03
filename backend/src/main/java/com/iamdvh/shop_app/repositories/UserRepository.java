@@ -1,6 +1,6 @@
 package com.iamdvh.shop_app.repositories;
 
-import com.iamdvh.shop_app.models.User;
+import com.iamdvh.shop_app.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

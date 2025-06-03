@@ -1,4 +1,4 @@
-package com.iamdvh.shop_app.responses;
+package com.iamdvh.shop_app.dtos.responses;
 
 import lombok.AccessLevel;
 import lombok.Builder;

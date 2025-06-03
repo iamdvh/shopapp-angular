@@ -2,8 +2,8 @@ package com.iamdvh.shop_app.services.imp;
 
 import com.iamdvh.shop_app.dtos.UserDTO;
 import com.iamdvh.shop_app.exceptions.DataNotFoundException;
-import com.iamdvh.shop_app.models.Role;
-import com.iamdvh.shop_app.models.User;
+import com.iamdvh.shop_app.entities.Role;
+import com.iamdvh.shop_app.entities.User;
 import com.iamdvh.shop_app.repositories.RoleRepository;
 import com.iamdvh.shop_app.repositories.UserRepository;
 import com.iamdvh.shop_app.services.IUserService;

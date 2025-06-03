@@ -1,9 +1,8 @@
 package com.iamdvh.shop_app.controllers;
 
 import com.iamdvh.shop_app.dtos.CategoryDTO;
-import com.iamdvh.shop_app.models.Category;
+import com.iamdvh.shop_app.entities.Category;
 import com.iamdvh.shop_app.services.ICategoryService;
-import com.iamdvh.shop_app.services.imp.CategoryService;
 import jakarta.validation.Valid;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
