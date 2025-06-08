@@ -4,6 +4,7 @@ import com.iamdvh.shop_app.services.BaseRedisService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+@Service
 public class BaseRedisServiceImpl implements BaseRedisService {
   private final RedisTemplate<String, Object> redisTemplate;
   private final HashOperations<String, String, Object> hashOperations;
@@ -27,12 +29,20 @@ public class BaseRedisServiceImpl implements BaseRedisService {
 
   @Override
   public void setTimeToLive(String key, long timeToLive) {
+    try {
     redisTemplate.expire(key, timeToLive, TimeUnit.DAYS);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
   }
 
   @Override
   public void hashSet(String key, String field, Object value) {
-    hashOperations.put(key, field, value);
+    try {
+      hashOperations.put(key, field, value);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
   }
 
   @Override
@@ -85,8 +95,8 @@ public class BaseRedisServiceImpl implements BaseRedisService {
 
   @Override
   public void delete(String key, List<String> fields) {
-      for (String field : fields) {
-        hashOperations.delete(key, field);
-      }
+    for (String field : fields) {
+      hashOperations.delete(key, field);
+    }
   }
 }

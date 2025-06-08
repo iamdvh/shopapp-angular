@@ -1,5 +1,8 @@
 package com.iamdvh.shop_app.configurations;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,8 +33,14 @@ public class RedisConfiguration {
     redisTemplate.setConnectionFactory(jedisConnectionFactory());
     redisTemplate.setKeySerializer(new StringRedisSerializer());
     redisTemplate.setHashKeySerializer(new StringRedisSerializer());
-    redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
-    redisTemplate.setHashValueSerializer(new GenericJackson2JsonRedisSerializer());
+
+    ObjectMapper objectMapper = new ObjectMapper();
+    objectMapper.registerModule(new JavaTimeModule());
+    objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+    GenericJackson2JsonRedisSerializer genericJackson2JsonRedisSerializer = new GenericJackson2JsonRedisSerializer(objectMapper);
+
+    redisTemplate.setValueSerializer(genericJackson2JsonRedisSerializer);
+    redisTemplate.setHashValueSerializer(genericJackson2JsonRedisSerializer);
     return redisTemplate;
   }
 }
