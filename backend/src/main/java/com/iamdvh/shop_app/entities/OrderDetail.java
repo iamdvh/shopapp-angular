@@ -21,7 +21,7 @@ public class OrderDetail extends BasePrimaryKey {
     Product product;
     Float price;
     @Column(name = "number_of_product")
-    Integer numberOfProduct;
+    Integer numberOfProducts;
     @Column(name = "total_money")
     Float totalMoney;
     String color;

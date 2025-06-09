@@ -1,18 +1,20 @@
 package com.iamdvh.shop_app.services;
 
-import com.iamdvh.shop_app.dtos.OrderDTO;
-import com.iamdvh.shop_app.dtos.responses.OrderResponse;
+import com.iamdvh.shop_app.dtos.OrderDetailsDTO;
+import com.iamdvh.shop_app.dtos.responses.OrderDetailsResponse;
 
 import java.util.List;
 
 public interface IOrderDetailService {
-    OrderResponse createOrderDetail(OrderDTO orderDTO);
+    OrderDetailsResponse createOrderDetail(OrderDetailsDTO orderDetailsDTO);
 
-    OrderResponse updateOrderDetail(Long id, OrderDTO orderDTO);
+    OrderDetailsResponse updateOrderDetail(Long id, OrderDetailsDTO orderDetailsDTO);
 
     void deleteOrderDetail(Long id);
 
-    OrderResponse getOrderDetail(Long id);
+    OrderDetailsResponse
 
-    List<OrderResponse> getOrderDetails(Long userId);
+    getOrderDetail(Long id);
+
+    List<OrderDetailsResponse> getOrderDetails(Long orderId);
 }
