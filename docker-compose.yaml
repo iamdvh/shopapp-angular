@@ -1,0 +1,60 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: DockerFile
+    container_name: shop_app
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql_server:3306/shopapp
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=root
+      - SPRING_REDIS_HOST=redis_server
+      - SPRING_REDIS_PORT=6379
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=none
+    ports:
+      - "8088:8088"
+    depends_on:
+      - db
+      - redis
+    networks:
+      - iamdvh-network
+  db:
+    image: mysql:8.0.42
+    container_name: mysql_server
+    environment:
+      - MYSQL_DATABASE=shopapp
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - db-data:/var/lib/mysql
+    ports:
+      - "3606:3606"
+    networks:
+      - iamdvh-network
+  redis:
+    image: redis:7.4.1
+    container_name: redis_server
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - iamdvh-network
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      - PMA_HOST=db # Kết nối đến dịch vụ MySQL
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+    ports:
+      - "8000:80"
+    depends_on:
+      - db
+    networks:
+      - iamdvh-network
+networks:
+  iamdvh-network:
+    driver: bridge
+volumes:
+  db-data:
+  redis-data:

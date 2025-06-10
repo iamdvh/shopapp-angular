@@ -177,7 +177,7 @@ public class ProductController {
     return contentType != null && contentType.startsWith("image/");
   }
 
-  //    @PostMapping("/generateFakerProducts")
+  @PostMapping("/generateFakerProducts")
   public ResponseEntity<?> generateFakerProducts() {
     Faker faker = new Faker();
     for (int i = 0; i < 1000000; i++) {
